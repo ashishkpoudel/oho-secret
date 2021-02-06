@@ -20,7 +20,7 @@ export class AppFactory {
     return this.dbConnection.synchronize(true);
   }
 
-  async close(): Promise<void> {
-    await this.dbConnection.close();
+  close(): Promise<void> {
+    return this.dbConnection.close();
   }
 }
