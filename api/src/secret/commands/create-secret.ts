@@ -1,5 +1,5 @@
 import { getRepository } from 'typeorm';
-import { SecretEntity } from 'secret/entities/secret.entity';
+import { SecretEntity } from 'secret/infrastructure/typeorm/entities/secret.entity';
 import { bcryptService } from 'core/services/bcrypt.service';
 
 export const createSecret = async (props: any): Promise<void> => {

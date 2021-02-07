@@ -7,8 +7,8 @@ import { globalErrorHandler } from 'core/http/middlewares/global-error-handler';
 import { validateRequest } from 'core/http/middlewares/validate-request';
 import { validationErrorHandler } from 'core/http/middlewares/validation-error-handler';
 import * as healthCheckController from 'common/http/controllers/health-check.controller';
-import * as secretController from 'secret/http/controllers/secret.controller';
-import { SecretRequest } from 'secret/http/requests/secret.request';
+import * as secretController from 'secret/infrastructure/http/controllers/secret.controller';
+import { SecretRequest } from 'secret/infrastructure/http/requests/secret.request';
 
 const app = express();
 
