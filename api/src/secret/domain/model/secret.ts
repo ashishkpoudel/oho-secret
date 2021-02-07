@@ -1,25 +1,16 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import { URL } from 'url';
 
-@Entity('secrets')
-export class SecretEntity {
-  @PrimaryGeneratedColumn('uuid')
+export class Secret {
   public readonly id: string;
-
-  @Column({ type: 'text' })
   public readonly body: string;
-
-  @Column({ type: 'varchar', nullable: true })
   public readonly password: string | null;
-
-  @Column({ type: 'interval' })
   public readonly expiresIn: string;
-
-  @CreateDateColumn()
   public readonly createdAt: Date;
-
-  @UpdateDateColumn()
   public readonly updatedAt: Date;
+
+  constructor(props: Partial<Secret>) {
+    Object.assign(this, props);
+  }
 
   getSharingLink(baseUrl: string): string {
     return new URL(`/secrets/${this.id}`, baseUrl).toString();
