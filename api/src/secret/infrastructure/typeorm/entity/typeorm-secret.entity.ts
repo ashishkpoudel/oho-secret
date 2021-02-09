@@ -1,8 +1,8 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 
 @Entity('secrets')
-export class TypeormSecret {
-  constructor(props: Partial<TypeormSecret>) {
+export class TypeormSecretEntity {
+  constructor(props: Partial<TypeormSecretEntity>) {
     Object.assign(this, props);
   }
 

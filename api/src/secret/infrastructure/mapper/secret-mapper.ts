@@ -1,5 +1,5 @@
 import { Secret as SecretModel } from 'secret/domain/model/secret';
-import { TypeormSecret as SecretEntity } from 'secret/infrastructure/typeorm/entity/typeorm-secret';
+import { TypeormSecretEntity as SecretEntity } from 'secret/infrastructure/typeorm/entity/typeorm-secret.entity';
 
 export class SecretMapper {
   public static toDomain(raw: any): SecretModel {
