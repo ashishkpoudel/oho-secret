@@ -5,7 +5,7 @@ import { SecretMapper } from 'secret/infrastructure/mapper/secret-mapper';
 import { TypeormSecret } from 'secret/infrastructure/typeorm/entity/typeorm-secret';
 
 export class TypeormSecretRepository implements SecretRepository {
-  async find(id: string): Promise<Secret> {
+  async getById(id: string): Promise<Secret> {
     const secret = await getRepository(TypeormSecret).findOneOrFail({ id });
     return SecretMapper.toDomain(secret);
   }

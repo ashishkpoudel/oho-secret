@@ -1,9 +1,9 @@
-import { Secret } from 'secret/domain/model/secret';
-import { TypeormSecret } from 'secret/infrastructure/typeorm/entity/typeorm-secret';
+import { Secret as SecretModel } from 'secret/domain/model/secret';
+import { TypeormSecret as SecretEntity } from 'secret/infrastructure/typeorm/entity/typeorm-secret';
 
 export class SecretMapper {
-  public static toDomain(raw: any): Secret {
-    return new Secret({
+  public static toDomain(raw: any): SecretModel {
+    return new SecretModel({
       id: raw.id,
       body: raw.body,
       password: raw.password,
@@ -13,8 +13,8 @@ export class SecretMapper {
     });
   }
 
-  public static toPersistence(secret: Secret): TypeormSecret {
-    return new TypeormSecret({
+  public static toPersistence(secret: SecretModel): SecretEntity {
+    return new SecretEntity({
       id: secret.id,
       body: secret.body,
       password: secret.password,
