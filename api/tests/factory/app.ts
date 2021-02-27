@@ -1,8 +1,8 @@
 import { Express } from 'express';
 import * as Knex from 'knex';
+import 'index';
 import app from 'app';
 import { db } from 'database';
-import 'secret/infrastructure/knex/projection/knex-secret.projection';
 
 export class AppFactory {
   private constructor(
